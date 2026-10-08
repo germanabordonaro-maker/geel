@@ -136,3 +136,14 @@
   & img { transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
   &:hover img { transform: scale(1.04); }
 }
+
+@utility field {
+  width: 100%;
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+  padding: 0.6rem 0;
+  font-size: 1.05rem;
+  outline: none;
+  transition: border-color 0.3s;
+  &:focus { border-color: var(--accent); }
+}
