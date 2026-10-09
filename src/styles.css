@@ -168,12 +168,22 @@
   animation: wobble 9s ease-in-out infinite;
 }
 
+@utility marquee {
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
 @utility field {
   width: 100%; background: var(--card);
   border: 1.5px solid var(--input); border-radius: 0.9rem;
   padding: 0.85rem 1rem; font-size: 1rem; outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
   &:focus { border-color: var(--foreground); box-shadow: 0 0 0 4px color-mix(in oklab, var(--lavender) 45%, transparent); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 @keyframes wobble {
