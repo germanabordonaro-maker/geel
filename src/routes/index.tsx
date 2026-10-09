@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import jelly from "@/assets/jelly.png";
 import jellySmall from "@/assets/jelly-small.png";
-import webImg from "@/assets/web.jpg";
 import photoImg from "@/assets/photo.jpg";
 
 export const Route = createFileRoute("/")({
@@ -185,8 +184,8 @@ function Index() {
 
         {/* Ticker */}
         <div aria-hidden className="overflow-hidden border-y-2 border-foreground bg-lime py-3">
-          <div className="flex whitespace-nowrap font-display text-2xl font-bold">
-            {Array.from({ length: 3 }).map((_, i) => (
+          <div className="marquee flex whitespace-nowrap font-display text-2xl font-bold">
+            {Array.from({ length: 6 }).map((_, i) => (
               <span key={i} className="flex shrink-0 items-center gap-6 px-3">
                 Siti vetrina <Star className="h-4 w-4" /> Landing page <Star className="h-4 w-4" /> UX & UI <Star className="h-4 w-4" /> Fotografia <Star className="h-4 w-4" /> Consulenza <Star className="h-4 w-4" />
               </span>
@@ -200,7 +199,7 @@ function Index() {
 
           <div className="mt-16 grid gap-6 lg:grid-cols-12">
             {/* Standard */}
-            <article className="reveal relative overflow-hidden rounded-[2.5rem] bg-secondary p-8 text-secondary-foreground md:p-12 lg:col-span-7 lg:row-span-2">
+            <article className="reveal relative overflow-hidden rounded-[2.5rem] bg-secondary p-8 text-secondary-foreground md:p-12 lg:col-span-6">
               <Blob tone="lime" className="absolute -right-16 -top-16 h-64 w-64 opacity-90" />
               <div className="relative">
                 <span className="eyebrow text-lime">Standard</span>
@@ -217,13 +216,12 @@ function Index() {
                 </ul>
                 <div className="mt-10 flex flex-wrap items-center gap-6">
                   <button onClick={() => goContact("sito")} className="btn-jelly">Parliamo del tuo sito →</button>
-                  <img src={webImg} alt="Schizzi di wireframe per un sito web" loading="lazy" width={1024} height={1280} className="hidden h-28 w-24 rotate-3 rounded-2xl object-cover md:block" />
                 </div>
               </div>
             </article>
 
             {/* Custom */}
-            <article className="reveal relative overflow-hidden rounded-[2.5rem] border-2 border-foreground bg-lavender p-8 md:p-10 lg:col-span-5 lg:mt-16">
+            <article className="reveal relative overflow-hidden rounded-[2.5rem] border-2 border-foreground bg-lavender p-8 md:p-10 lg:col-span-6">
               <img src={jellySmall} alt="" loading="lazy" width={816} height={816} className="wobble absolute -right-6 -top-6 w-28" />
               <span className="eyebrow">Custom</span>
               <h3 className="mt-4 max-w-xs text-3xl leading-none md:text-5xl">Progetti che prendono una forma tutta loro.</h3>
@@ -237,7 +235,7 @@ function Index() {
               </ul>
               <button onClick={() => goContact("custom")} className="btn-ghost mt-8 bg-card">Raccontaci la tua idea →</button>
             </article>
-            <div className="reveal relative hidden overflow-hidden rounded-[2.5rem] lg:col-span-5 lg:block">
+            <div className="reveal relative hidden overflow-hidden rounded-[2.5rem] lg:col-span-12 lg:block">
               <img src={photoImg} alt="Set fotografico con ceramiche alla luce naturale" loading="lazy" width={1024} height={1280} className="h-full max-h-72 w-full object-cover" />
               <span className="sticker absolute bottom-4 left-4">Soft ideas, solid design</span>
             </div>
@@ -256,10 +254,9 @@ function Index() {
               </div>
               <div className="reveal md:col-span-5 md:pt-16">
                 <p className="text-lg leading-relaxed">
-                  Prima di rifarlo da zero, capiamo cosa funziona e cosa si può migliorare. Facciamo una prima valutazione gratuita del tuo sito e ti indichiamo le opportunità più interessanti per renderlo più chiaro, efficace e coerente con il tuo progetto.
+                  Prima di rifarlo da zero, <strong className="font-bold">capiamo cosa funziona</strong> e cosa si può migliorare. Facciamo una <strong className="font-bold">prima valutazione gratuita</strong> del tuo sito e ti indichiamo le <strong className="font-bold">opportunità più interessanti</strong> per renderlo <strong className="font-bold">più chiaro, efficace e coerente</strong> con il tuo progetto.
                 </p>
                 <button onClick={() => goContact("analisi")} className="btn-jelly mt-8 bg-secondary text-secondary-foreground">Richiedi la prima analisi gratuita →</button>
-                <p className="mt-4 text-sm font-medium">Nessun impegno. Partiamo da quello che hai.</p>
               </div>
             </div>
           </div>
@@ -268,11 +265,11 @@ function Index() {
         {/* METODO */}
         <section id="metodo" className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32">
           <h2 className="reveal max-w-4xl text-4xl leading-[0.95] md:text-6xl">Niente formule rigide. Prima capiamo cosa ti serve.</h2>
-          <ol className="mt-16 grid gap-6 md:grid-cols-3">
+          <ol className="mt-16 grid gap-6 md:grid-cols-3 md:pb-32">
             {[
-              ["01", "Ci racconti", "Ci spieghi cosa fai, cosa vuoi ottenere e cosa oggi non funziona come vorresti.", "lavender", "md:mt-0"],
-              ["02", "Facciamo ordine", "Valutiamo insieme le priorità e scegliamo la soluzione più adatta al tuo progetto.", "pink", "md:mt-16"],
-              ["03", "Gli diamo forma", "Progettiamo una soluzione curata e coerente con le tue esigenze.", "lime", "md:mt-32"],
+              ["01", "Ci racconti", "Ci spieghi cosa fai, cosa vuoi ottenere e cosa oggi non funziona come vorresti.", "lavender", "md:translate-y-0"],
+              ["02", "Facciamo ordine", "Valutiamo insieme le priorità e scegliamo la soluzione più adatta al tuo progetto.", "pink", "md:translate-y-16"],
+              ["03", "Gli diamo forma", "Progettiamo una soluzione curata e coerente con le tue esigenze.", "lime", "md:translate-y-32"],
             ].map(([n, t, d, tone, offset]) => (
               <li key={n} className={`reveal relative rounded-[2rem] border-2 border-foreground bg-card p-8 ${offset}`}>
                 <div className="flex items-start justify-between">
